@@ -155,3 +155,41 @@ ai-architect_prompt_engineering/
 └── config.example.yaml      # Runtime config template
 ```
 ---
+
+## Diagnosis
+
+```
+Run this one-liner from the project root:
+python -c "
+from prompt_engineering.config import AppSettings
+s = AppSettings()
+key = s.OPENAI_API_KEY.get_secret_value()
+print(f'Key length: {len(key)}')
+print(f'Key starts with: {key[:8]}...')
+print(f'Key ends with: ...{key[-4:]}')
+print(f'Has quotes: {key.startswith(chr(34)) or key.startswith(chr(39))}')
+print(f'Has whitespace: {key != key.strip()}')
+"
+```
+---
+
+Compare with what's in .env:
+```
+grep OPENAI_API_KEY .env
+```
+---
+
+Pydantic-settings always prioritizes real environment variables over the .env file. 
+Check if one is exported:
+```
+echo $OPENAI_API_KEY
+```
+
+If it's overriding the .env file. Fix with:
+```
+unset OPENAI_API_KEY
+
+```
+---
+
+Then re-run the command
