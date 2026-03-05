@@ -158,8 +158,8 @@ ai-architect_prompt_engineering/
 
 ## Diagnosis
 
-```
 Run this one-liner from the project root:
+```
 python -c "
 from prompt_engineering.config import AppSettings
 s = AppSettings()
@@ -188,7 +188,6 @@ echo $OPENAI_API_KEY
 If it's overriding the .env file. Fix with:
 ```
 unset OPENAI_API_KEY
-
 ```
 ---
 
