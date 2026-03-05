@@ -115,7 +115,7 @@ The agent follows a **Thought -> Action -> Observation** loop (ReAct). After eac
 
 ## Security
 
-- **API keys**: Stored in `.env`, loaded via Pydantic `SecretStr`, never logged.
+- **API keys**: Stored as environment variables, loaded via Pydantic.
 - **Prompt-injection detection**: 13 input-side + 5 output-side regex patterns.
 - **Input sanitisation**: Control-character stripping, length limiting, injection blocking.
 - **Output filtering**: PII redaction (email) and indirect-injection stripping.
@@ -150,7 +150,7 @@ ai-architect_prompt_engineering/
 │   │   └── meta_prompter.py # MetaPrompter, MetaPromptResult
 │   ├── services/            # LLM transport layer
 │   │   ├── __init__.py
-│   │   ├── llm_client.py    # Async Azure OpenAI client
+│   │   ├── llm_client.py    # Async LLM client
 │   │   └── batch_processor.py # Concurrent batch execution
 │   ├── security/            # Input/output sanitisation
 │   │   ├── __init__.py
@@ -161,10 +161,7 @@ ai-architect_prompt_engineering/
 │       ├── meta_prompts/
 │       └── react_prompts/
 ├── profiles/                # YAML agent profiles
-├── examples/                # Step-by-step demo scripts
-├── docs/                    # Solution architecture, AC docs
 ├── pyproject.toml           # Project config
 └── config.example.yaml      # Runtime config template
 ```
-
 ---
