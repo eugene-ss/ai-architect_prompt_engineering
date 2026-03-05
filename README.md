@@ -66,16 +66,6 @@ prompt-engineering optimize --from v1
 prompt-engineering benchmark --label baseline
 prompt-engineering batch --queries "Teach me greetings,Explain verb conjugation,Help with numbers" --concurrency 5
 ```
-
-### Example scripts
-
-```bash
-python examples/step1_initial_prompt.py       # v1: vague prompt
-python examples/step2_refined_prompt.py        # v2: refined prompt
-python examples/step3_meta_prompting.py        # v3: LLM-refined
-python examples/step4_react_self_reflection.py # Full ReAct agent
-```
-
 ---
 
 ## Prompt evolution pipeline
