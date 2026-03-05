@@ -1,0 +1,11 @@
+agent_name: LanguageTutorReActAgent_Advanced
+max_turns: 20
+tool_budget: 15
+enable_self_reflection: true
+system_prompt_file: react_prompts/react_system.md
+self_reflection_prompt_file: react_prompts/self_reflection.md
+
+llm_config:
+  model: gpt-4o-mini-2024-07-18
+  temperature: 0.2
+  max_tokens: 8192

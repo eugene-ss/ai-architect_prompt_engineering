@@ -1,0 +1,38 @@
+# Runtime configuration.
+# Copy to config.yaml and adjust as needed.
+
+# Agent profile to load (profiles/default.yaml or profiles/advanced.yaml)
+profile: default
+
+# Query to run through the ReAct agent
+query: "I am a beginner in Spanish and want to improve my conversational skills for travel."
+
+# Prompt version for the tutor system prompt (v1, v2, v3)
+prompt_version: v3
+
+# Execution settings
+max_parallel: 10
+verbose: true
+
+# Output
+output_dir: outputs
+output_format: json  # json | text
+
+# Evaluation (when running 'evaluate' or 'benchmark')
+evaluation:
+  test_queries:
+    - "Help me learn basic Spanish greetings for travel."
+    - "I need to order food in a Spanish restaurant."
+    - "How do I ask for directions in Spanish?"
+    - "Teach me Spanish numbers and how to use them when shopping."
+    - "What are the most common Spanish verb conjugations I need?"
+  metrics:
+    - relevance
+    - coherence
+    - completeness
+    - actionability
+    - safety
+  prompt_versions:
+    - v1
+    - v2
+    - v3
